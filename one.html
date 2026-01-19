@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bright Future Tuition</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #3b136f, #5a189a, #240046);
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      header {
+        text-align: center;
+        padding: 30px 20px;
+        position: relative;
+      }
+
+      .logo-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .logo-area img {
+        width: 60px;
+      }
+
+      .brand-name {
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      .brand-name span {
+        color: #ffd60a;
+      }
+
+      header h2 {
+        margin-top: 10px;
+        font-size: 2.8rem;
+      }
+
+      header h2 span {
+        color: #ffd60a;
+      }
+
+      /* Rocket Animation */
+      .rocket {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        font-size: 40px;
+        animation: float 3s infinite ease-in-out;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      /* Container */
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      /* Hero */
+      .hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .hero-text {
+        flex: 1;
+      }
+
+      .hero-text h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      .hero-text p {
+        line-height: 1.6;
+      }
+
+      .hero-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .hero-image img {
+        width: 300px;
+        border-radius: 20px;
+        box-shadow: 0 0 25px rgba(255, 214, 10, 0.6);
+      }
+
+      /* Features */
+      .features {
+        text-align: center;
+        margin: 60px 0;
+      }
+
+      .feature-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .feature-box {
+        background: #2d0b59;
+        padding: 15px 25px;
+        border-radius: 15px;
+        border: 1px solid #ffd60a;
+        min-width: 220px;
+        transition: 0.3s;
+      }
+
+      .feature-box:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 15px gold;
+      }
+
+      /* Subjects */
+      .subjects {
+        text-align: center;
+        margin: 60px 0;
+      }
+
+      .subject-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .subject {
+        background: #2d0b59;
+        padding: 20px;
+        border-radius: 15px;
+        width: 150px;
+        border: 1px solid #ffd60a;
+      }
+
+      /* Pricing */
+      .pricing {
+        text-align: center;
+        margin: 60px 0;
+      }
+
+      .price-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .price-card {
+        background: #1f073b;
+        border: 2px solid #ffd60a;
+        padding: 20px;
+        border-radius: 15px;
+        width: 220px;
+      }
+
+      /* Notes Section */
+      .notes {
+        text-align: center;
+        margin: 60px 0;
+      }
+
+      .notes a {
+        background: #ffd60a;
+        color: #2d0b59;
+        padding: 12px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      /* Admission Form */
+      .form-section {
+        text-align: center;
+        margin: 60px 0;
+      }
+
+      form {
+        max-width: 400px;
+        margin: auto;
+        background: #2d0b59;
+        padding: 25px;
+        border-radius: 15px;
+        border: 1px solid #ffd60a;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 8px;
+      }
+
+      button {
+        background: #ffd60a;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      /* Call Now */
+      .call {
+        background: #ffd60a;
+        color: #2d0b59;
+        text-align: center;
+        padding: 20px;
+        border-radius: 30px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 40px auto;
+        width: fit-content;
+      }
+
+      /* Address */
+      .address {
+        background: #2d0b59;
+        text-align: center;
+        padding: 15px;
+        border-radius: 20px;
+        border: 1px solid #ffd60a;
+        margin-bottom: 40px;
+      }
+
+      /* WhatsApp Floating Button */
+      .whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #25d366;
+        color: white;
+        padding: 15px 18px;
+        border-radius: 50%;
+        font-size: 22px;
+        text-decoration: none;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 15px;
+        background: #14002e;
+      }
+
+      /* Responsive */
+      @media (max-width: 700px) {
+        header h2 {
+          font-size: 2rem;
+        }
+        .hero {
+          flex-direction: column;
+        }
+        .rocket {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="rocket">🚀</div>
+      <div class="logo-area">
+        <!-- Replace logo.png with your real logo file -->
+        <img src="logo.png" alt="logo" />
+        <div class="brand-name">BRIGHT <span>FUTURE</span></div>
+      </div>
+      <h2>TUITION <span>CLASSES</span></h2>
+      <p>Nursery to 10th • All Subjects</p>
+    </header>
+
+    <div class="container">
+      <section class="hero">
+        <div class="hero-text">
+          <h3>Give Your Child A Bright Future ✨</h3>
+          <p>
+            Small batches, expert teachers, weekly tests, personal attention and
+            special study notes.
+          </p>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1588072432836-e10032774350" />
+        </div>
+      </section>
+
+      <section class="features">
+        <h3>Why Choose Us?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">✔ Small Batches</div>
+          <div class="feature-box">✔ Affordable Fees</div>
+          <div class="feature-box">✔ Weekly Tests</div>
+          <div class="feature-box">✔ Special Notes</div>
+        </div>
+      </section>
+
+      <section class="subjects">
+        <h3>Subjects We Teach</h3>
+        <div class="subject-grid">
+          <div class="subject">
+            📘
+            <h4>Math</h4>
+          </div>
+          <div class="subject">
+            🔬
+            <h4>Science</h4>
+          </div>
+          <div class="subject">
+            📖
+            <h4>English</h4>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing">
+        <h3>Price Range</h3>
+        <div class="price-grid">
+          <div class="price-card">Nursery – 5th<br />₹500 – ₹800</div>
+          <div class="price-card">6th – 8th<br />₹800 – ₹1200</div>
+          <div class="price-card">9th – 10th<br />₹1200 – ₹2000</div>
+        </div>
+      </section>
+
+      <section class="notes">
+        <h3>Download Sample Notes</h3>
+        <a href="#">📖 Download Notes PDF</a>
+      </section>
+
+      <section class="form-section">
+        <h3>Online Admission Form</h3>
+        <form onsubmit="alert('Form submitted successfully!'); return false;">
+          <input type="text" placeholder="Student Name" required />
+          <input type="text" placeholder="Parent Contact" required />
+          <select required>
+            <option>Select Class</option>
+            <option>Nursery</option>
+            <option>1st – 5th</option>
+            <option>6th – 8th</option>
+            <option>9th – 10th</option>
+          </select>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <div class="call">📞 CALL NOW : +91 9876543210</div>
+
+      <div class="address">📍 1234 Tuition Center Street, City, State</div>
+    </div>
+
+    <a class="whatsapp" href="https://wa.me/919876543210" target="_blank">💬</a>
+
+    <footer>© 2026 Bright Future Tuition Classes</footer>
+  </body>
+</html>

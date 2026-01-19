@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bright Future Tuition</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #3b136f, #5a189a, #240046);
+        color: white;
+      }
+
+      /* Header */
+      header {
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      .logo span {
+        color: #ffd60a;
+      }
+
+      header h2 {
+        margin-top: 15px;
+        font-size: 2.8rem;
+      }
+
+      header h2 span {
+        color: #ffd60a;
+      }
+
+      /* Section Container */
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+      }
+
+      /* Hero */
+      .hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      .hero-text {
+        flex: 1;
+      }
+
+      .hero-text h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      .hero-text p {
+        line-height: 1.6;
+      }
+
+      .hero-image {
+        flex: 1;
+        text-align: center;
+      }
+
+      .hero-image img {
+        width: 280px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(255, 214, 10, 0.6);
+      }
+
+      /* Features */
+      .features {
+        margin: 50px 0;
+        text-align: center;
+      }
+
+      .features h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .feature-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .feature-box {
+        background: #2d0b59;
+        padding: 15px 20px;
+        border-radius: 15px;
+        border: 1px solid #ffd60a;
+        min-width: 200px;
+      }
+
+      /* Subjects */
+      .subjects {
+        text-align: center;
+        margin: 50px 0;
+      }
+
+      .subject-grid {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .subject {
+        background: #2d0b59;
+        padding: 20px;
+        border-radius: 15px;
+        width: 150px;
+        border: 1px solid #ffd60a;
+      }
+
+      .subject h4 {
+        margin-top: 10px;
+        color: #ffd60a;
+      }
+
+      /* Pricing */
+      .pricing {
+        text-align: center;
+        margin: 50px 0;
+      }
+
+      .price-grid {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .price-card {
+        background: #1f073b;
+        border: 2px solid #ffd60a;
+        padding: 20px;
+        border-radius: 15px;
+        width: 220px;
+      }
+
+      /* Call Now */
+      .call {
+        background: #ffd60a;
+        color: #2d0b59;
+        text-align: center;
+        padding: 25px;
+        border-radius: 30px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 40px auto;
+        width: fit-content;
+      }
+
+      /* Address */
+      .address {
+        background: #2d0b59;
+        text-align: center;
+        padding: 15px;
+        border-radius: 20px;
+        border: 1px solid #ffd60a;
+        margin-bottom: 40px;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 15px;
+        background: #14002e;
+      }
+
+      /* Responsive */
+      @media (max-width: 700px) {
+        header h2 {
+          font-size: 2rem;
+        }
+        .hero {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        🚀
+        <div>BRIGHT <span>FUTURE</span></div>
+      </div>
+      <h2>TUITION <span>CLASSES</span></h2>
+      <p>Nursery to 10th • All Subjects</p>
+    </header>
+
+    <div class="container">
+      <section class="hero">
+        <div class="hero-text">
+          <h3>Give Your Child A Bright Future ✨</h3>
+          <p>
+            Small batches, personal attention, weekly tests, experienced
+            teachers and affordable fees. Special study notes provided for all
+            classes.
+          </p>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1588072432836-e10032774350"
+            alt="students" />
+        </div>
+      </section>
+
+      <section class="features">
+        <h3>Why Choose Us?</h3>
+        <div class="feature-grid">
+          <div class="feature-box">✔ Small Batches</div>
+          <div class="feature-box">✔ Affordable Fees</div>
+          <div class="feature-box">✔ Weekly Tests</div>
+          <div class="feature-box">✔ Special Notes</div>
+        </div>
+      </section>
+
+      <section class="subjects">
+        <h3>Subjects We Teach</h3>
+        <div class="subject-grid">
+          <div class="subject">
+            📘
+            <h4>Math</h4>
+          </div>
+          <div class="subject">
+            🔬
+            <h4>Science</h4>
+          </div>
+          <div class="subject">
+            📖
+            <h4>English</h4>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing">
+        <h3>Price Range</h3>
+        <div class="price-grid">
+          <div class="price-card">
+            <h4>Nursery – 5th</h4>
+            <p>₹500 – ₹800 / month</p>
+          </div>
+          <div class="price-card">
+            <h4>6th – 8th</h4>
+            <p>₹800 – ₹1200 / month</p>
+          </div>
+          <div class="price-card">
+            <h4>9th – 10th</h4>
+            <p>₹1200 – ₹2000 / month</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="call">📞 CALL NOW : +91 9876543210</div>
+
+      <div class="address">📍 1234 Tuition Center Street, City, State</div>
+    </div>
+
+    <footer>© 2026 Bright Future Tuition Classes</footer>
+  </body>
+</html>

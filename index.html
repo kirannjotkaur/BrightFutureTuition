@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bright Future Tuition Classes</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+        color: white;
+      }
+
+      /* Header */
+      header {
+        text-align: center;
+        padding: 40px 20px;
+      }
+      header h1 {
+        font-size: 3rem;
+        color: #ffd700;
+      }
+      header p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+      }
+
+      /* Hero Section */
+      .hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        gap: 30px;
+      }
+      .hero-text {
+        max-width: 500px;
+      }
+      .hero-text h2 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+      }
+      .hero-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      .hero img {
+        width: 300px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+      }
+
+      /* Features */
+      .features {
+        text-align: center;
+        padding: 40px 20px;
+      }
+      .features h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      .feature-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .feature {
+        background: #1c1c1c;
+        padding: 20px;
+        border-radius: 15px;
+        width: 220px;
+        transition: 0.3s;
+      }
+      .feature:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 0 15px gold;
+      }
+
+      /* Pricing */
+      .pricing {
+        text-align: center;
+        padding: 40px 20px;
+      }
+      .pricing h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      .price-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .card {
+        background: #111;
+        border: 2px solid gold;
+        border-radius: 15px;
+        padding: 20px;
+        width: 250px;
+      }
+      .card h3 {
+        color: #ffd700;
+      }
+      .card p {
+        margin: 10px 0;
+      }
+
+      /* Notes Section */
+      .notes {
+        text-align: center;
+        padding: 40px 20px;
+      }
+      .notes button {
+        background: gold;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .notes button:hover {
+        background: white;
+      }
+
+      /* Contact */
+      .contact {
+        text-align: center;
+        padding: 40px;
+        background: #000;
+      }
+      .contact button {
+        background: gold;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 20px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      .contact button:hover {
+        background: white;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9rem;
+        background: #0a0a0a;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 2.2rem;
+        }
+        .hero {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>BRIGHT FUTURE</h1>
+      <p>Tuition Classes - Nursery to 10th</p>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Give Your Child A Bright Future ✨</h2>
+        <p>
+          Personalized attention, experienced teachers, regular tests, doubt
+          sessions, and guaranteed improvement. Join Bright Future today!
+        </p>
+      </div>
+      <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f"
+        alt="students" />
+    </section>
+
+    <section class="features">
+      <h2>Why Choose Us?</h2>
+      <div class="feature-box">
+        <div class="feature">📚 Nursery to 10th Classes</div>
+        <div class="feature">📝 Regular Tests</div>
+        <div class="feature">👩‍🏫 Expert Teachers</div>
+        <div class="feature">📈 Guaranteed Improvement</div>
+      </div>
+    </section>
+
+    <section class="pricing">
+      <h2>Price Range</h2>
+      <div class="price-cards">
+        <div class="card">
+          <h3>Nursery – 5th</h3>
+          <p>₹500 – ₹800 / month</p>
+        </div>
+        <div class="card">
+          <h3>6th – 8th</h3>
+          <p>₹800 – ₹1200 / month</p>
+        </div>
+        <div class="card">
+          <h3>9th – 10th</h3>
+          <p>₹1200 – ₹2000 / month</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="notes">
+      <h2>📖 Special Notes Available</h2>
+      <p>Get well-prepared study notes for all subjects.</p>
+      <button onclick="alert('Notes will be provided after admission!')">
+        View Notes Option
+      </button>
+    </section>
+
+    <section class="contact">
+      <h2>Enroll Now!</h2>
+      <p>Contact us for admission and free demo class.</p>
+      <button onclick="alert('Call: +91-XXXXXXXXXX')">Call Now</button>
+    </section>
+
+    <footer>© 2026 Bright Future Tuition Classes | All Rights Reserved</footer>
+  </body>
+</html>
