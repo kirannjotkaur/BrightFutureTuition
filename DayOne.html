@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Rose Day 🌹</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+  color: #4a0c2b;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* LOCK SCREEN */
+#lockScreen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#lockScreen input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+}
+
+#lockScreen button {
+  margin-top: 15px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 20px;
+  background: #b1124c;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* MAIN CONTENT */
+#content {
+  display: none;
+}
+
+/* Falling roses */
+.rose {
+  position: fixed;
+  top: -10%;
+  font-size: 24px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(110vh); opacity: 0; }
+}
+
+header {
+  padding: 90px 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+header p {
+  font-size: 1.3rem;
+}
+
+.message {
+  background: white;
+  margin: 30px auto;
+  padding: 35px;
+  width: 85%;
+  max-width: 700px;
+  border-radius: 25px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.message span {
+  color: #b1124c;
+  font-weight: bold;
+}
+
+.roses {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 40px 20px;
+}
+
+.rose-card {
+  background: white;
+  width: 230px;
+  padding: 25px;
+  border-radius: 22px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+footer {
+  padding: 25px;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOCK SCREEN -->
+<div id="lockScreen">
+  <h1>🔒 Secret Rose 🌹</h1>
+  <p>Only Sewu has the key 💗</p>
+  <input type="password" id="password" placeholder="Enter password">
+  <button onclick="unlock()">Unlock</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<!-- MAIN WEBSITE CONTENT -->
+<div id="content">
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+  <h1>🌹 Happy Rose Day 🌹</h1>
+  <p>Some feelings bloom only once…</p>
+</header>
+
+<section class="message">
+  <h2>For <span>Sewu</span> 💗</h2>
+  <p>
+    This rose carries everything I can’t say out loud.  
+    Every petal whispers how special you are to me.  
+    On this Rose Day, I choose <span>Sewu</span>.
+  </p>
+</section>
+
+<section class="roses">
+  <div class="rose-card">
+    <h3>🌹 Red Rose</h3>
+    <p>Because love should be fearless</p>
+  </div>
+
+  <div class="rose-card">
+    <h3>🌸 Pink Rose</h3>
+    <p>Soft, sweet, and beautiful like you</p>
+  </div>
+
+  <div class="rose-card">
+    <h3>🤍 White Rose</h3>
+    <p>Pure feelings, no conditions</p>
+  </div>
+</section>
+
+<footer>
+  Made with 💕 only for Sewu
+</footer>
+
+</div>
+
+<!-- SCRIPTS -->
+<script>
+function unlock() {
+  const pass = document.getElementById("password").value;
+  if (pass === "Sk@@..11") {
+    document.getElementById("lockScreen").style.display = "none";
+    document.getElementById("content").style.display = "block";
+
+    for (let i = 0; i < 20; i++) {
+      let rose = document.createElement("div");
+      rose.className = "rose";
+      rose.innerHTML = "🌹";
+      rose.style.left = Math.random() * 100 + "vw";
+      rose.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(rose);
+    }
+  } else {
+    document.getElementById("error").innerText = "Wrong key 🌑";
+  }
+}
+</script>
+
+</body>
+</html>
