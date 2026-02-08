@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Propose Day 💍</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #fdeff2, #f8cdda);
+  color: #4a0c2b;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* LOCK SCREEN */
+#lock {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#lock input {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  margin-top: 12px;
+  width: 200px;
+}
+
+#lock button {
+  margin-top: 16px;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 25px;
+  background: #b1124c;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* MAIN CONTENT */
+#main {
+  display: none;
+}
+
+header {
+  padding: 80px 20px 40px;
+}
+
+header h1 {
+  font-size: 2.8rem;
+}
+
+header p {
+  font-size: 1.3rem;
+}
+
+/* MESSAGE CARD */
+.card {
+  background: white;
+  margin: 30px auto;
+  padding: 35px;
+  width: 88%;
+  max-width: 720px;
+  border-radius: 28px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card span {
+  color: #b1124c;
+  font-weight: bold;
+}
+
+/* PROPOSE BUTTON */
+.propose-btn {
+  margin-top: 25px;
+  padding: 14px 30px;
+  border-radius: 30px;
+  border: none;
+  background: #b1124c;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* FLOATING HEARTS */
+.heart {
+  position: fixed;
+  top: -10%;
+  font-size: 22px;
+  animation: fall 6s linear infinite;
+}
+
+@keyframes fall {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(110vh); opacity: 0; }
+}
+
+footer {
+  padding: 25px;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOCK SCREEN -->
+<div id="lock">
+  <h1>🔒 A Question for Sewu 💗</h1>
+  <p>Only one heart has the key</p>
+  <input type="password" id="pass" placeholder="Enter password">
+  <button onclick="unlock()">Unlock</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main">
+
+<!-- Background Music (YouTube Beliya) -->
+<iframe
+  id="music"
+  width="0"
+  height="0"
+  src=""
+  frameborder="0"
+  allow="autoplay">
+</iframe>
+
+<header>
+  <h1>💍 Happy Propose Day 💍</h1>
+  <p>Some questions change everything…</p>
+</header>
+
+<section class="card">
+  <h2>For <span>Sewu</span> 🌙</h2>
+  <p>
+    Monku tanu pata meri life da best part ki hain tuvde pyaar nu accept karna, chahe tuvda 23rd of April 2022 wala proposal ho yah 31st January wala menu khushi nal manzor hain or kabol hain tuvde pyaar ne meri life badal ti hain mein rona bhul gyi hu menu haar dard or khushi ch tuvdi lood hain mein tanu haar din or pyar kardi ja rhi hu or mein khush ho ki aaa pyaar endless hain tuvde pyaare pyaare gestures or love nu mein or accept kardi hu daily tusi haar din di tarah pyare ho or aaj mein tanu PROPOSE KAR RAHI HU 
+WILL YOU MARRY ME? AND BE MY MONKU ALWAYS 🤍🫂🥺
+  </p>
+  <p>
+    With all my heart, in every lifetime,  
+    I choose <span>you</span>.
+  </p>
+
+  <button class="propose-btn" onclick="propose()">
+    Will you be mine? 💗
+  </button>
+</section>
+
+<footer>
+  Made with love, courage & a little nervous heart 💕
+</footer>
+
+</div>
+
+<script>
+function unlock() {
+  const p = document.getElementById("pass").value;
+  if (p === "sewu&moon") {
+    document.getElementById("lock").style.display = "none";
+    document.getElementById("main").style.display = "block";
+
+    // Start Beliya music
+    document.getElementById("music").src =
+      "https://www.youtube.com/embed/g7ysRe4kuDY?autoplay=1&loop=1&playlist=g7ysRe4kuDY";
+
+    // Hearts animation
+    for (let i = 0; i < 18; i++) {
+      let h = document.createElement("div");
+      h.className = "heart";
+      h.innerHTML = "💗";
+      h.style.left = Math.random() * 100 + "vw";
+      h.style.animationDuration = (4 + Math.random() * 4) + "s";
+      document.body.appendChild(h);
+    }
+  } else {
+    document.getElementById("error").innerText = "Wrong key 🌑";
+  }
+}
+
+function propose() {
+  alert("She already chose you, Sewu 💍💗");
+}
+</script>
+
+</body>
+</html>
