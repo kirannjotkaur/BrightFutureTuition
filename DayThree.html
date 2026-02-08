@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Chocolate Day 🍫</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #3e2723, #6d4c41);
+  color: #fff3e0;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* LOCK SCREEN */
+#lock {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#lock input {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  margin-top: 12px;
+  width: 220px;
+}
+
+#lock button {
+  margin-top: 16px;
+  padding: 12px 26px;
+  border: none;
+  border-radius: 25px;
+  background: #d2691e;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* MAIN CONTENT */
+#main {
+  display: none;
+}
+
+header {
+  padding: 70px 20px 30px;
+}
+
+header h1 {
+  font-size: 2.6rem;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+/* CARD */
+.card {
+  background: #4e342e;
+  margin: 30px auto;
+  padding: 35px;
+  width: 90%;
+  max-width: 720px;
+  border-radius: 28px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.card span {
+  color: #ffcc80;
+  font-weight: bold;
+}
+
+/* BUTTON */
+.btn {
+  margin: 10px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  background: #d2691e;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* MELT */
+.melt {
+  animation: melt 2s ease-in-out forwards;
+}
+
+@keyframes melt {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(1.3); opacity: 0; }
+}
+
+/* FALLING CHOCOS */
+.choco {
+  position: fixed;
+  top: -10%;
+  font-size: 24px;
+  animation: fall 6s linear infinite;
+}
+
+@keyframes fall {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(110vh); opacity: 0; }
+}
+
+footer {
+  padding: 25px;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOCK SCREEN -->
+<div id="lock">
+  <h1>🔒 Sweet Surprise for Monku 🍫</h1>
+  <p>Only one heart knows the taste</p>
+  <input type="password" id="pass" placeholder="Enter password">
+  <button onclick="unlock()">Unlock</button>
+  <p id="error" style="color:#ffab91;"></p>
+</div>
+
+<!-- MAIN -->
+<div id="main">
+
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2023/03/28/audio_ambient_romantic.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+  <h1>🍫 Happy Chocolate Day 🍫</h1>
+  <p>Love that melts, stays forever 🤍</p>
+</header>
+
+<section class="card">
+  <h2>For <span>Monku</span> 🤍</h2>
+
+  <p>
+    Chocolate is sweet,  
+    but not sweeter than you.
+  </p>
+
+  <p>
+    On good days and bad ones,  
+    you are my comfort,  
+    my calm,  
+    my sweetness.
+  </p>
+
+  <p>
+    Just like chocolate melts slowly,  
+    my love for you  
+    grows deeper every day 🍫
+  </p>
+
+  <p>
+    Happy Chocolate Day, Monku.  
+    Stay mine. Stay sweet. Always 🤍
+  </p>
+
+  <!-- CHOCOLATE CHOICE -->
+  <p><b>Choose your chocolate 🍫</b></p>
+  <button class="btn" onclick="choose('Dark')">🍫 Dark</button>
+  <button class="btn" onclick="choose('Milk')">🍫 Milk</button>
+  <button class="btn" onclick="choose('White')">🍫 White</button>
+
+  <!-- COUNTER -->
+  <p id="count">Chocolates taken: 0 🍫</p>
+  <button class="btn" onclick="addChoco()">Take one 🍫</button>
+
+  <!-- SECRET -->
+  <button class="btn" onclick="reveal()">Tap for secret 🤍</button>
+  <p id="secret" style="display:none;">
+    You are my home, my habit, my forever 🤍
+  </p>
+
+  <!-- MELT -->
+  <button class="btn" id="meltBtn" onclick="meltChoco()">Chocolate melts 😌</button>
+
+  <!-- MOOD -->
+  <button class="btn" onclick="darkMood()">Midnight Chocolate 🌙</button>
+</section>
+
+<footer>
+  Made with sweetness, love & Monku in mind 🤍🍫
+</footer>
+
+</div>
+
+<script>
+let chocoCount = 0;
+
+function unlock() {
+  const p = document.getElementById("pass").value;
+  if (p === "sewu&moon") {
+    document.getElementById("lock").style.display = "none";
+    document.getElementById("main").style.display = "block";
+    document.getElementById("music").play();
+
+    for (let i = 0; i < 18; i++) {
+      let c = document.createElement("div");
+      c.className = "choco";
+      c.innerHTML = "🍫";
+      c.style.left = Math.random() * 100 + "vw";
+      c.style.animationDuration = (4 + Math.random() * 4) + "s";
+      document.body.appendChild(c);
+    }
+
+    setTimeout(() => {
+      alert("Chocolate ends… but I stay 🤍🍫");
+    }, 10000);
+  } else {
+    document.getElementById("error").innerText =
+      "Wrong key… not sweet enough 🍂";
+  }
+}
+
+function choose(type) {
+  alert(type + " chocolate chosen 🍫🤍\nStill sweeter is my love for you.");
+}
+
+function addChoco() {
+  chocoCount++;
+  document.getElementById("count").innerText =
+    "Chocolates taken: " + chocoCount + " 🍫";
+}
+
+function reveal() {
+  document.getElementById("secret").style.display = "block";
+}
+
+function meltChoco() {
+  const btn = document.getElementById("meltBtn");
+  btn.classList.add("melt");
+  setTimeout(() => {
+    alert("Chocolate melted… but my love didn’t 🤍");
+  }, 1500);
+}
+
+function darkMood() {
+  document.body.style.background =
+    "linear-gradient(to bottom, #1c0f0a, #3e2723)";
+}
+</script>
+
+</body>
+</html>
