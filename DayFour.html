@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pa">
+<head>
+<meta charset="UTF-8">
+<title>Teddy Day for Sewu 🧸</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #fdeff9, #ecb3ff);
+  text-align: center;
+  overflow-x: hidden;
+  color: #4a154b;
+}
+
+/* LOCK SCREEN */
+#lock {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#lock input {
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+}
+
+#lock button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border-radius: 20px;
+  border: none;
+  background: #9b1c63;
+  color: white;
+  font-size: 1rem;
+}
+
+/* MAIN */
+#main {
+  display: none;
+}
+
+header {
+  padding: 70px 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+.teddy {
+  font-size: 120px;
+  animation: hug 2s infinite;
+}
+
+@keyframes hug {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.card {
+  background: white;
+  margin: 30px auto;
+  padding: 30px;
+  width: 85%;
+  max-width: 700px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* HEARTS */
+.heart {
+  position: fixed;
+  bottom: -10%;
+  font-size: 20px;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+.play-btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+footer {
+  padding: 25px;
+  font-size: 0.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOCK -->
+<div id="lock">
+  <h1>🔐 Teddy Secret 🧸</h1>
+  <p>ਸਿਰਫ਼ Sewu ਲਈ 💗</p>
+  <input type="password" id="pass" placeholder="Password">
+  <button onclick="openTeddy()">Open</button>
+  <p id="msg" style="color:red;"></p>
+</div>
+
+<!-- MAIN -->
+<div id="main">
+
+<!-- SIDHU MOOSE WALA SONG -->
+<iframe id="song"
+  width="0"
+  height="0"
+  src="https://www.youtube.com/embed/2Z3d9LzE1Kk?enablejsapi=1"
+  frameborder="0"
+  allow="autoplay">
+</iframe>
+
+<header>
+  <h1>🧸 Happy Teddy Day 🧸</h1>
+  <div class="teddy">🧸🫂</div>
+
+  <button class="play-btn" onclick="playSong()">
+    ▶️ Sidhu Moose Wala – US
+  </button>
+</header>
+
+<div class="card">
+  ਤੁਸੀਂ ਹੀ ਮੇਰਾ ਟੈੱਡੀ ਹੋ, ਤੁਸੀਂ ਹੀ ਮੇਰਾ ਬੇਅਰ 🐻  
+  ਮੇਰਾ ਪਿਆਰਾ ਟੈੱਡੀ ਬੇਅਰ 🧸  
+  <br><br>
+  ਤੈਨੂੰ ਕੱਡਲ ਕਰਨਾ ਤੇ ਜੱਫੀ ਪਾਉਣਾ ਮੈਨੂੰ ਬਹੁਤ ਪਸੰਦ ਹੈ।  
+  ਤੇਰੇ ਪਿਆਰੇ-ਪਿਆਰੇ ਐਕਸ਼ਨ ਬਿਲਕੁਲ ਇੱਕ ਬੇਬੀ 🐥 ਵਰਗੇ ਨੇ,  
+  ਜਿਹੜਾ ਆਪਣੇ ਫੇਵਰਿਟ ਖਿਡੌਣੇ ਤੋਂ ਬਿਨਾਂ ਸੁੱਤਿਆ ਨਹੀਂ ਜਾਂਦਾ।  
+  <br><br>
+  ਤੇ ਉਹ ਫੇਵਰਿਟ ਖਿਡੌਣਾ ਮੈਂ ਹੀ ਹਾਂ 🫶🏻😭  
+  <br><br>
+  ਮੇਰਾ ਟੈੱਡੀ ਬੇਅਰ 🧸❤️‍🩹
+</div>
+
+<footer>
+  Moon 💗 → Sewu | Sidhu vibes forever 🖤
+</footer>
+
+</div>
+
+<script>
+function openTeddy() {
+  if (document.getElementById("pass").value === "teddy") {
+    document.getElementById("lock").style.display = "none";
+    document.getElementById("main").style.display = "block";
+
+    for (let i = 0; i < 30; i++) {
+      let h = document.createElement("div");
+      h.className = "heart";
+      h.innerHTML = "💗";
+      h.style.left = Math.random() * 100 + "vw";
+      h.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(h);
+    }
+  } else {
+    document.getElementById("msg").innerText = "ਗਲਤ ਪਾਸਵਰਡ 🥺";
+  }
+}
+
+function playSong() {
+  document.getElementById("song").src += "&autoplay=1";
+}
+</script>
+
+</body>
+</html>
