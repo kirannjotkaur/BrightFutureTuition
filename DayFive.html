@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Promise Day 🤞</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: radial-gradient(circle at top, #1a0f14, #000);
+  color: #f5e6c8;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* LOCK SCREEN */
+#lock {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#lock h1 {
+  font-size: 2.6rem;
+  color: gold;
+}
+
+#lock input {
+  margin-top: 15px;
+  padding: 12px;
+  width: 220px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+#lock button {
+  margin-top: 18px;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(45deg, gold, #b8860b);
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* MAIN */
+#main {
+  display: none;
+}
+
+/* HEADER */
+header {
+  padding: 80px 20px 40px;
+}
+
+header h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  color: gold;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px gold; }
+  to { text-shadow: 0 0 20px gold; }
+}
+
+/* MESSAGE CARD */
+.message {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  margin: 30px auto;
+  padding: 35px;
+  width: 85%;
+  max-width: 800px;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(255,215,0,0.2);
+  line-height: 1.9;
+  font-size: 1.1rem;
+}
+
+/* PROMISE BUTTON */
+.promise-btn {
+  margin: 40px 0;
+  padding: 15px 40px;
+  border-radius: 40px;
+  border: none;
+  background: linear-gradient(45deg, gold, #ffdf6c);
+  color: black;
+  font-size: 1.1rem;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 gold; }
+  70% { box-shadow: 0 0 25px gold; }
+  100% { box-shadow: 0 0 0 gold; }
+}
+
+/* GOLD PARTICLES */
+.spark {
+  position: fixed;
+  bottom: -10%;
+  font-size: 14px;
+  animation: rise linear infinite;
+}
+
+@keyframes rise {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-120vh); opacity: 0; }
+}
+
+footer {
+  padding: 25px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOCK SCREEN -->
+<div id="lock">
+  <h1>🔒 Promise Vault</h1>
+  <p>One heart. One key.</p>
+  <input type="password" id="pass" placeholder="Password">
+  <button onclick="unlock()">Unlock</button>
+  <p id="error" style="color:red;"></p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main">
+
+<header>
+  <h1>🤞 Happy Promise Day 🤞</h1>
+</header>
+
+<section class="message">
+monku happy promise day aaj first meet si menu kuch yaad nhi hain kyunki mein theek nhi si but 30 minutes menu purre yaad hain haar moment second laugh tuvda face jadd mein chali jandi hu tuvda face jadd mein gussa ho jandi hu tuvdi naughtiness harkatan jadd mein tusi flirt karde ho tuvda mere li wait apna daarna apna khambana menu nhi pata ki promise day ki hain i celebrate it as my first meet that's all matters for me menu tuvde nal milna buhot accha laga si mein tuvde nal rahna chahidi hu. But as per days mein promise kardi hu apni loyalty di, mein promise kardi hu apne sath da, i promise ki mein tuvde li better banu, I promise you will be my husband ❤️‍🩹🦢
+</section>
+
+<button class="promise-btn" onclick="finalPromise()">
+  I Promise Forever
+</button>
+
+<footer>
+  Dark. Deep. Forever.
+</footer>
+
+</div>
+
+<script>
+function unlock() {
+  if (document.getElementById("pass").value === "promise") {
+    document.getElementById("lock").style.display = "none";
+    document.getElementById("main").style.display = "block";
+
+    for (let i = 0; i < 35; i++) {
+      let s = document.createElement("div");
+      s.className = "spark";
+      s.innerHTML = "✨";
+      s.style.left = Math.random() * 100 + "vw";
+      s.style.animationDuration = (6 + Math.random() * 6) + "s";
+      document.body.appendChild(s);
+    }
+  } else {
+    document.getElementById("error").innerText = "Wrong key";
+  }
+}
+
+function finalPromise() {
+  alert("This promise has no expiry 🤍");
+}
+</script>
+
+</body>
+</html>
