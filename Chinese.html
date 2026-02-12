@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Dragon Restaurant</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff8f0;
+}
+
+header {
+    background: #b22222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background: url('https://images.unsplash.com/photo-1604908176997-431f87d8b7b2') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 40px;
+}
+
+.hero button {
+    padding: 12px 25px;
+    border: none;
+    background: #ff4500;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero button:hover {
+    background: #cc3700;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.menu {
+    padding: 50px;
+    text-align: center;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.item {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.item span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #b22222;
+}
+
+.about, .contact {
+    padding: 50px;
+    text-align: center;
+    background: #ffe4e1;
+}
+
+footer {
+    background: #b22222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media(max-width: 768px){
+    header {
+        flex-direction: column;
+    }
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🐉 Golden Dragon</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h2>Authentic Chinese Flavors</h2>
+    <p>Experience the taste of tradition 🍜</p>
+    <button onclick="orderNow()">Order Now</button>
+</section>
+
+<section class="menu" id="menu">
+    <h2>Our Special Menu</h2>
+    <div class="menu-items">
+        <div class="item">
+            <h3>Kung Pao Chicken</h3>
+            <p>Spicy stir-fried chicken with peanuts</p>
+            <span>₹299</span>
+        </div>
+
+        <div class="item">
+            <h3>Veg Hakka Noodles</h3>
+            <p>Classic street-style noodles</p>
+            <span>₹199</span>
+        </div>
+
+        <div class="item">
+            <h3>Spring Rolls</h3>
+            <p>Crispy rolls with vegetable filling</p>
+            <span>₹149</span>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+        Golden Dragon brings you authentic Chinese cuisine 
+        made with fresh ingredients and traditional recipes.
+    </p>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Bright Future Street, Your City</p>
+    <p>📞 +91 98765 43210</p>
+</section>
+
+<footer>
+    <p>© 2026 Golden Dragon Restaurant</p>
+</footer>
+
+<script>
+function orderNow() {
+    alert("Thank you for choosing Golden Dragon 🐉 Your order will be ready soon!");
+}
+
+window.addEventListener("load", function() {
+    const items = document.querySelectorAll(".item");
+    items.forEach((item, index) => {
+        setTimeout(() => {
+            item.style.transition = "all 0.5s ease";
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
+        }, index * 200);
+    });
+});
+</script>
+
+</body>
+</html>
