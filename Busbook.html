@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PowerFighter Bus Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #ff6600;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.booking-form {
+    background: white;
+    width: 40%;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+.booking-form h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 8px;
+    margin: 5px 0 15px 0;
+}
+
+button {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e65c00;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #222;
+    color: white;
+}
+</style>
+<header>
+    <h1>🚌 PowerFighter Bus Booking</h1>
+    <p>Safe & Fast Travel Service</p>
+</header>
+
+<section class="booking-form">
+    <h2>Book Your Ticket</h2>
+    <form>
+        <label>From:</label>
+        <input type="text" placeholder="Enter City">
+
+        <label>To:</label>
+        <input type="text" placeholder="Enter Destination">
+
+        <label>Date:</label>
+        <input type="date">
+
+        <label>Passengers:</label>
+        <input type="number" min="1" max="10">
+
+        <button type="submit">Search Bus</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 PowerFighter Bus Booking | All Rights Reserved</p>
+</footer>
+
+</body>
+  </html>
