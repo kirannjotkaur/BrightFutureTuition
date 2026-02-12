@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiss Dayyyyy 💋</title>
+
+<style>
+body{
+  margin:0;
+  font-family:cursive;
+  background:linear-gradient(45deg,#ffb6d9,#ff69b4,#ffc0cb);
+  background-size:300% 300%;
+  animation:bgMove 6s infinite alternate;
+  overflow-x:hidden;
+  text-align:center;
+  color:#fff;
+}
+
+/* Background animation */
+@keyframes bgMove{
+  from{background-position:0% 50%;}
+  to{background-position:100% 50%;}
+}
+
+/* Lock Screen */
+#lock{
+  position:fixed;
+  inset:0;
+  background:#ff69b4;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:999;
+}
+
+input{
+  padding:10px;
+  border:none;
+  border-radius:20px;
+  font-size:16px;
+}
+
+button{
+  margin-top:20px;
+  padding:12px 30px;
+  border:none;
+  border-radius:30px;
+  background:white;
+  color:#ff1493;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+/* Title bounce */
+h1{
+  font-size:50px;
+  margin-top:80px;
+  animation:bounce 1s infinite alternate;
+}
+
+@keyframes bounce{
+  from{transform:translateY(0);}
+  to{transform:translateY(-20px);}
+}
+
+/* Floating blush overlay */
+#blush{
+  position:fixed;
+  inset:0;
+  background:rgba(255,192,203,0.4);
+  opacity:0;
+  transition:0.5s;
+  pointer-events:none;
+}
+
+/* Secret message */
+#secret{
+  display:none;
+  font-size:22px;
+  margin-top:30px;
+  color:#ff0066;
+  font-weight:bold;
+}
+
+/* Kiss animation */
+@keyframes floatUp{
+  from{transform:translateY(0); opacity:1;}
+  to{transform:translateY(-150px); opacity:0;}
+}
+
+/* Counter text */
+#counter{
+  font-size:20px;
+  margin-top:15px;
+}
+</style>
+</head>
+<body>
+
+<!-- Password Screen -->
+<div id="lock">
+  <h2>Enter cute password 💗</h2>
+  <input type="password" id="pass">
+  <button onclick="unlock()">Unlockkk 💕</button>
+</div>
+
+<!-- Main App -->
+<div id="main" style="display:none;">
+
+<div id="blush"></div>
+
+<h1>KISSS DAYYYYY 💋💖✨</h1>
+<p style="font-size:20px;">Kiran + Sewak = Foreverrrrr 💕🥺</p>
+
+<button onclick="kiss()">Give me a kisssss 💋</button>
+<p id="counter">Kisses given: 0 💋</p>
+
+<div id="secret">
+  AHHHH STOPPP 😭💖<br>
+  7 kisses already???<br>
+  You are officially my favorite human foreverrrr 💋🥺💕<br>
+  I love you so so so muchhhh 💗✨
+</div>
+
+</div>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Heartbeat Sound -->
+<audio id="heartbeat">
+  <source src="https://www.soundjay.com/human/heartbeat-01a.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let kissCount=0;
+
+// Unlock password screen
+function unlock(){
+  const password="baby";
+  const input=document.getElementById("pass").value;
+  if(input===password){
+    document.getElementById("lock").style.display="none";
+    document.getElementById("main").style.display="block";
+  }else{
+    alert("Wrongggg 😭");
+  }
+}
+
+// Kiss button logic
+function kiss(){
+  kissCount++;
+  document.getElementById("counter").innerHTML="Kisses given: "+kissCount+" 💋💋💋";
+
+  // Play heartbeat
+  document.getElementById("heartbeat").play();
+
+  // Blush flash
+  document.getElementById("blush").style.opacity="1";
+  setTimeout(()=>{document.getElementById("blush").style.opacity="0";},500);
+
+  // Multiple kiss emojis float
+  for(let i=0;i<8;i++){
+    let lip=document.createElement("div");
+    lip.innerHTML="💋";
+    lip.style.position="fixed";
+    lip.style.left=Math.random()*100+"%";
+    lip.style.top=Math.random()*100+"%";
+    lip.style.fontSize=(20+Math.random()*30)+"px";
+    lip.style.animation="floatUp 2s ease forwards";
+    document.body.appendChild(lip);
+    setTimeout(()=>{lip.remove();},2000);
+  }
+
+  // Secret after 7 kisses
+  if(kissCount>=7){
+    document.getElementById("secret").style.display="block";
+  }
+}
+</script>
+
+</body>
+</html>
